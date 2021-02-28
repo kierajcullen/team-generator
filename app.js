@@ -79,7 +79,7 @@ const employeeQuestions = [
   },
   {
     type: "input",
-    message: "Please enter your unique ID: ",
+    message: "Please enter your ID: ",
     name: "ID",
   },
   {
