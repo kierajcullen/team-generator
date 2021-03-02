@@ -16,7 +16,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 var teamMembers = [];
-var employees = [];
+// var employees = [];
 
 const managerQuestions = [
   {
@@ -33,7 +33,7 @@ const managerQuestions = [
   {
     type: "input",
     message: "Please enter your unique ID: ",
-    name: "ID",
+    name: "id",
   },
   {
     type: "input",
@@ -80,7 +80,7 @@ const employeeQuestions = [
   {
     type: "input",
     message: "Please enter your ID: ",
-    name: "ID",
+    name: "id",
   },
   {
     type: "input",
@@ -141,7 +141,7 @@ function createTeamList() {
     if (employeeInfo.role == "intern") {
       let newIntern = new Intern(
         employeeInfo.name,
-        employeeInfo.ID,
+        employeeInfo.id,
         employeeInfo.email,
         employeeInfo.school
       );
@@ -149,7 +149,7 @@ function createTeamList() {
     } else if (employeeInfo.role == "engineer") {
       let newEngineer = new Engineer(
         employeeInfo.name,
-        employeeInfo.ID,
+        employeeInfo.id,
         employeeInfo.email,
         employeeInfo.github
       );
@@ -159,6 +159,8 @@ function createTeamList() {
     }
     if (employeeInfo.totalTeam === "Yes") {
       createTeamList();
+    } else {
+      buildHtmlPage(outputPath, render(teamMembers));
     }
   });
 }
@@ -181,9 +183,10 @@ function init() {
     // const manager = new Manager
     const manager = new Manager(
       managerInfo.name,
-      managerInfo.ID,
+      managerInfo.id,
       managerInfo.email,
-      managerInfo.officeNumber
+      managerInfo.officeNumber,
+      managerInfo.github
     );
     // pass in the parameters created in the manager.js
     // add the info to the team array
