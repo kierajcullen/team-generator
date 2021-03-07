@@ -6,3 +6,6 @@ The `inquirer.js` npm package creates the CLI (Command Line Interface) tools to 
 
 # Sample HTML Page
 ![](img/github.png)
+
+# Implementation Video
+![](img/team-generator.gif)
