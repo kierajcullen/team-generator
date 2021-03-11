@@ -1,4 +1,4 @@
-# Template Engine
+# Template Engine - Team Generator
 
 This Node CLI incorporates HTML, JS, Node.js and Inquirer to output an HTML page displaying the users team members. 
 
